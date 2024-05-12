@@ -400,6 +400,23 @@ static const struct amd_flash_info jedec_table[] = {
 			ERASEINFO(0x10000, 7),
 		}
 	},
+	{
+		.mfr_id 	= (u16)EON_ALT_MANU,
+		.dev_id 	= AM29LV160DB,
+		.name		= "EON EN29LV160AB",
+		.uaddr		= {
+				[1] = MTD_UADDR_0x0555_0x02AA /* x16 */
+		},
+		.DevSize		= SIZE_2MiB,
+		.CmdSet 		= P_ID_AMD_STD,
+		.NumEraseRegions	= 4,
+		.regions			= {
+			ERASEINFO(0x04000, 1),
+			ERASEINFO(0x02000, 2),
+			ERASEINFO(0x08000, 1),
+			ERASEINFO(0x10000, 31),
+		}
+	},
 #endif
 };
 
