@@ -1,6 +1,6 @@
-SMDK2410 BOARD
-M:	David Müller <d.mueller@elsoft.ch>
+EINS2440 BOARD
+M:	madeinchaos <https://github.com/madeinchaos>
 S:	Maintained
-F:	board/samsung/smdk2410/
-F:	include/configs/smdk2410.h
-F:	configs/smdk2410_defconfig
+F:	board/samsung/eins2440/
+F:	include/configs/eins2440.h
+F:	configs/eins2440_defconfig

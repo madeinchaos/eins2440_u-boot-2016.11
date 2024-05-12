@@ -1,10 +1,6 @@
 /*
- * (C) Copyright 2002
- * Sysgo Real-Time Solutions, GmbH <www.elinos.com>
- * Marius Groeger <mgroeger@sysgo.de>
- *
- * (C) Copyright 2002, 2010
- * David Mueller, ELSOFT AG, <d.mueller@elsoft.ch>
+ * (C) Copyright 2024
+ * madeinchaos <https://github.com/madeinchaos>
  *
  * SPDX-License-Identifier:	GPL-2.0+
  */
@@ -22,9 +18,9 @@ DECLARE_GLOBAL_DATA_PTR;
 #define M_MDIV	0xC3
 #define M_PDIV	0x4
 #define M_SDIV	0x1
-#elif (FCLK_SPEED == 1)		/* Fout = 202.8MHz */
-#define M_MDIV	0xA1
-#define M_PDIV	0x3
+#elif (FCLK_SPEED == 1)		/* Fout = 400MHz, Fout = 2 * m * Fin / (p*(2^S)), FVCO = 2 * m * Fin / p where: m=MDIV+8, p=PDIV+2, s=SDIV */
+#define M_MDIV	0x5C
+#define M_PDIV	0x1
 #define M_SDIV	0x1
 #endif
 
@@ -56,6 +52,9 @@ int board_early_init_f(void)
 	struct s3c24x0_clock_power * const clk_power =
 					s3c24x0_get_base_clock_power();
 	struct s3c24x0_gpio * const gpio = s3c24x0_get_base_gpio();
+
+	/* FCLK:HCLK:PCLK = 1:4:8 */
+	writel(5, &clk_power->clkdivn);
 
 	/* to reduce PLL lock time, adjust the LOCKTIME register */
 	writel(0xFFFFFF, &clk_power->locktime);
