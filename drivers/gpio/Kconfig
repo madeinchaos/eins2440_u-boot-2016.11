@@ -221,4 +221,12 @@ config MPC85XX_GPIO
 
 	  The driver has been tested on MPC85XX, but it is likely that other
 	  PowerQUICC III devices will work as well.
+
+config S3C2440_GPIO
+	bool "samsung S3C2440 GPIO driver"
+	depends on DM_GPIO
+	help
+	  The driver has been tested on EINS2440, it is likely that other
+	  devices will NOT work as well.
+
 endmenu
