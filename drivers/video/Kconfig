@@ -432,6 +432,11 @@ config VIDEO_TEGRA124
 	   enables this support which can be used on devices which
 	   have an eDP display connected.
 
+config ST7789_LCD
+	bool "Enable video support on ST7789_LCD"
+	help
+	   support on ST7789_LCD
+
 source "drivers/video/bridge/Kconfig"
 
 config VIDEO

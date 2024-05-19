@@ -86,7 +86,7 @@ struct s3c24x0_dma {
 	u32	dmasktrig;
 #if defined(CONFIG_S3C2400) || defined(CONFIG_S3C2410) \
 		|| defined(CONFIG_S3C2440)
-	u32	res[1];
+	u32	res[7];
 #endif
 };
 

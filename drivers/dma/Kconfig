@@ -19,4 +19,9 @@ config TI_EDMA3
 	  This driver support data transfer between memory
 	  regions.
 
+config S3C2440_DMA
+	bool "S3C2440_DMA driver"
+	help
+	  S3C2440_DMA driver.
+
 endmenu # menu "DMA Support"

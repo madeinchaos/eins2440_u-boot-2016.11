@@ -209,4 +209,9 @@ config TI_QSPI
 	  Enable the TI Quad-SPI (QSPI) driver for DRA7xx and AM43xx evms.
 	  This driver support spi flash single, quad and memory reads.
 
+config S3C2440_SPI
+	bool "S3C2440_SPI driver"
+	help
+	  S3C2440_SPI driver.
+
 endmenu # menu "SPI Support"

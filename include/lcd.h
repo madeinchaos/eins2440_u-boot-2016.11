@@ -196,13 +196,13 @@ void lcd_sync(void);
 #define NBYTES(bit_code)	(NBITS(bit_code) >> 3)
 #else /* 16bpp color definitions */
 # define CONSOLE_COLOR_BLACK	0x0000
-# define CONSOLE_COLOR_RED	0xF800
-# define CONSOLE_COLOR_GREEN	0x07E0
-# define CONSOLE_COLOR_YELLOW	0xFFE0
-# define CONSOLE_COLOR_BLUE	0x001F
-# define CONSOLE_COLOR_MAGENTA	0xF81F
-# define CONSOLE_COLOR_CYAN	0x07FF
-# define CONSOLE_COLOR_GREY	0xC618
+# define CONSOLE_COLOR_RED	0x00F8
+# define CONSOLE_COLOR_GREEN	0xE007
+# define CONSOLE_COLOR_YELLOW	0xE0FF
+# define CONSOLE_COLOR_BLUE	0x1F00
+# define CONSOLE_COLOR_MAGENTA	0x1FF8
+# define CONSOLE_COLOR_CYAN	0xFF07
+# define CONSOLE_COLOR_GREY	0x18C6
 # define CONSOLE_COLOR_WHITE	0xffff		/* Must remain last / highest */
 #endif /* color definitions */
 

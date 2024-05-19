@@ -189,9 +189,9 @@ void lcd_clear(void)
 #endif
 
 #ifndef CONFIG_SYS_WHITE_ON_BLACK
-	lcd_setfgcolor(CONSOLE_COLOR_BLACK);
-	lcd_setbgcolor(CONSOLE_COLOR_WHITE);
-	bg_color = CONSOLE_COLOR_WHITE;
+	lcd_setfgcolor(CONSOLE_COLOR_GREEN);
+	lcd_setbgcolor(CONSOLE_COLOR_BLACK);
+	bg_color = CONSOLE_COLOR_BLACK;
 #else
 	lcd_setfgcolor(CONSOLE_COLOR_WHITE);
 	lcd_setbgcolor(CONSOLE_COLOR_BLACK);
@@ -375,7 +375,9 @@ void lcd_logo_plot(int x, int y)
 					((col16 & 0x000F) << 1) |
 					((col16 & 0x00F0) << 3) |
 					((col16 & 0x0F00) << 4);
-				}
+			
+				fb16[j] = (fb16[j] >> 8) | (fb16[j] << 8);
+			}
 			bmap += BMP_LOGO_WIDTH;
 			fb16 += panel_info.vl_col;
 		}
